@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n, i, fib_i, fib_im1, fib_im2;
+    
+    do {
+        printf("Digite um número inteiro não negativo: ");
+        scanf("%d", &n);
+    } while (n < 0);
+  
+    if (n == 0) {
+        fib_i = 0;
+    } else if (n == 1) {
+        fib_i = 1;
+    } else {
+        fib_im2 = 0;
+        fib_im1 = 1;
+        for (i = 2; i <= n; i++) {
+            fib_i = fib_im1 + fib_im2;
+            fib_im2 = fib_im1;
+            fib_im1 = fib_i;
+        }
+    }
+  
+    printf("O %d numero da sequência de Fibonacci é: %d\n", n, fib_i);
+    
+    return 0;
+}
